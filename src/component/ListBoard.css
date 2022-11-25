@@ -2,12 +2,18 @@ h2{
     text-align: center;
 }
 
-table {
+.table_list {
     margin: auto;
     width: 950px;
 }
 
 #tr_top{
     background-color: orange;
+    text-align: center;
+}
+
+#pageList{
+    margin: auto;
+    width: 1000px;
     text-align: center;
 }

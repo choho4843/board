@@ -19,7 +19,7 @@ class WriteBoard extends Component {
     change = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name] : value});
+        this.setState({ [name]: value });
     }
 
     submit = (e) => {
@@ -30,17 +30,18 @@ class WriteBoard extends Component {
         formData.append('subject', this.state.subject);
         formData.append('content', this.state.content);
         formData.append('file', this.state.file);
-    
+
         // const config = {
         //     Headers: {
         //         'content-type': 'multipart/form-data'
         //     }
         // }
-       
-        axios.post('http://localhost:8080/writeboard', formData)
+
+        axios.post('http://localhost:8080/writeboard2', formData)
             .then((response) => {
                 console.log("통신성공")
-                alert(response.data); 
+                alert(response.data);
+                document.location.href = "/";
             })
             .catch((error) => {
                 console.log("통신성공")
@@ -66,7 +67,7 @@ class WriteBoard extends Component {
                                     <label for='password'>비밀번호</label>
                                 </td>
                                 <td className="td_right">
-                                    <input type='password' name='password' id='password' value={this.state.password}  onChange={this.change} />
+                                    <input type='password' name='password' id='password' value={this.state.password} onChange={this.change} />
                                 </td>
                             </tr>
                             <tr>
@@ -74,7 +75,7 @@ class WriteBoard extends Component {
                                     <label for='subject'>제목</label>
                                 </td>
                                 <td className="td_right">
-                                    <input type='title' name='subject' id='subject' value={this.state.subject}  onChange={this.change} />
+                                    <input type='title' name='subject' id='subject' value={this.state.subject} onChange={this.change} />
                                 </td>
                             </tr>
                             <tr>
@@ -82,7 +83,7 @@ class WriteBoard extends Component {
                                     <label for='content'>내용</label>
                                 </td>
                                 <td className="td_right">
-                                    <textarea type='text' name='content' id='content' cols='40' rows='15' value={this.state.content}  onChange={this.change} />
+                                    <textarea type='text' name='content' id='content' cols='40' rows='15' value={this.state.content} onChange={this.change} />
                                 </td>
                             </tr>
                             <tr>
@@ -90,7 +91,7 @@ class WriteBoard extends Component {
                                     <label for='file'>파일첨부</label>
                                 </td>
                                 <td className="td_right">
-                                    <input type='file' name='file' id='file' onChange={this.fileChange}  />
+                                    <input type='file' name='file' id='file' onChange={this.fileChange} />
                                 </td>
                             </tr>
                         </table>
