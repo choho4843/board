@@ -140,7 +140,7 @@ function DetailBoard() {
                     </table>
                     <section id='commandCell'>
                         <a href={"/update/"+id}>수정</a>&nbsp;&nbsp;
-                        <a href="#">삭제</a>
+                        <a href={"/delete/"+id}>삭제</a>
                     </section>
                 </form>
             </section>

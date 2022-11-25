@@ -4,6 +4,7 @@ import ListBoard from './component/ListBoard';
 import { Routes, Route } from 'react-router-dom'
 import Update from './component/Update';
 import BoardPage from './component/BoardPage';
+import DeleteBoard from './component/DeleteBoard';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route exact path='/write' element={<WriteBoard />} />
       <Route exact path='/detail/:id' element={<DetailBoard />} />
       <Route exact path='/update/:id' element={<Update />} />
+      <Route exact path='/delete/:id' element={<DeleteBoard />} />
 
     </Routes>
 
